@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -eu
+
+if grep -qe 'machine.*github\.com' .netrc 2>/dev/null
+then
+    exit 0
+fi
+if ! grep -qe 'machine.*github\.com' $HOME/.brainly/.netrc 2>/dev/null
+then
+    >&2 echo -e "\e[1;31mmissing .netrc with credentials for github.com \e[0m"
+    >&2 echo "see https://brainly.atlassian.net/wiki/spaces/TEC/pages/540541326/How+to+setup+.netrc for reference"
+    exit 1
+else
+    cp $HOME/.brainly/.netrc .netrc
+fi

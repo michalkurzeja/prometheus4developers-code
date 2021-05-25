@@ -20,5 +20,5 @@ func NewRequestHandler() *RequestHandler {
 }
 
 func (h *RequestHandler) Work() {
-	time.Sleep(randx.Duration(time.Millisecond, 100*time.Millisecond))
+	time.Sleep(randx.Duration(time.Millisecond, 300*time.Millisecond))
 }

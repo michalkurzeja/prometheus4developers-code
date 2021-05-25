@@ -29,7 +29,7 @@ func (p *StreamProcessor) Work() {
 }
 
 func (p StreamProcessor) processEvent(eventType string) {
-	time.Sleep(randx.Duration(100*time.Microsecond, 500*time.Microsecond))
+	time.Sleep(randx.Duration(100*time.Microsecond, 5*time.Millisecond))
 }
 
 // randomEventType returns a random event type.
